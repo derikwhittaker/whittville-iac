@@ -90,7 +90,6 @@ resource "aws_iam_policy" "lambda-dynamo-access" {
 EOF
 }
 
-
 resource "aws_iam_policy" "lambda-sns-access" {
   name        = "lambda-sns-access-policy"
   path        = "/"

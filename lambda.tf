@@ -77,3 +77,10 @@ resource "aws_lambda_function" "sensor-api" {
   }
 }
 
+
+resource "aws_lambda_permission" "whittville-aggregator-allow-cloudwatch" {
+  statement_id  = "AllowExecutionFromCloudWatch"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.sensor-aggregator.function_name
+  principal     = "events.amazonaws.com"
+}
